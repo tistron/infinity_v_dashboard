@@ -23,6 +23,8 @@ class Users extends Model
 
     protected $connection = 'mysql_fivem';
 
+    public $timestamps = false;
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
