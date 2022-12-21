@@ -11,12 +11,12 @@
     $user_count_card_widget_definition = [
         'type'       => 'card',
         'content'    => [
-            'header' => 'Anzahl von Userdatensätzen in der DB',
+            'header' => 'Anzahl von Userdatensätze in der DB',
             'body'   => $user_count,
         ]
     ];
 
-    Widget::add($user_count_card_widget_definition)->to('before_content');
+    Widget::add($user_count_card_widget_definition)->to('after_content');
 
 @endphp
 
