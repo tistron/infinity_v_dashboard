@@ -39,7 +39,7 @@ class UsersCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        $this->crud->removeButtons('create');
+        $this->crud->removeButton('create');
 
         CRUD::column('identifier')->type('string');
         CRUD::column('group')->type('string');
