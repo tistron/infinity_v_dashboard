@@ -94,7 +94,7 @@ class UsersCrudController extends CrudController
                 'label' => 'Gruppe // ACHTUNG NUR superadmin, admin, mod oder user',
                 'type' => 'string',
                 'placeholder' => 'Gruppe',
-                'validationRules' => 'required|max:255|string',
+                'validationRules' => 'required|max:255',
                 'validationMessages' => [
                     'required' => 'Pflichtfeld, kann nicht leer sein!',
                     'max' => 'Zu viele Zeichen!',
