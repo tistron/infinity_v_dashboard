@@ -28,7 +28,7 @@ class OwnedVehiclesCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\OwnedVehicles::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/owned-vehicles');
-        CRUD::setEntityNameStrings('Owned Vehicles', 'Owned Vehicles');
+        CRUD::setEntityNameStrings('Fahrzeuge', 'Fahrzeuge');
     }
 
     /**
