@@ -19,6 +19,8 @@ class VehiclesParking extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
+
+    protected $connection = 'mysql_fivem';
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
