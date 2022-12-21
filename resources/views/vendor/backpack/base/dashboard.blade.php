@@ -58,7 +58,7 @@
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl Twitter Accounts', 'body' => $twitter_account] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl Twitter Hashtags', 'body' => $twitter_hashtags] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl Twitter Tweets', 'body' => $twitter_tweets] ],
-            [ 'type' => 'card', 'content' => ['header' => 'Anzahl susgeparkter Autos (Ungenau)', 'body' => $vehicle_parking] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Anzahl ausgeparkter Autos (Ungenau)', 'body' => $vehicle_parking] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl WhatsApp Accounts', 'body' => $whatsapp_accounts] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl WhatsApp Chats', 'body' => $whatsapp_chats] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl WhatsApp Nachrichten', 'body' => $whatsapp_chats_messages] ],
