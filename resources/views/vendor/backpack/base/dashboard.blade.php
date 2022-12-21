@@ -17,8 +17,8 @@
 
     $user_count_card_widget_definition = [
         'type'    => 'div',
-        'class'   => 'row',
-        'content' => [ // widgets
+        'class'   => 'row bg-dark text-white',
+        'content' => [
             [ 'type' => 'card', 'content' => ['body' => $user_count ] ],
             [ 'type' => 'card', 'content' => ['body' => $vehicle_count] ],
             [ 'type' => 'card', 'content' => ['body' => $instagram_posts] ],
