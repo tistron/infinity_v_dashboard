@@ -20,6 +20,7 @@ class OwnedVehicles extends Model
     public $timestamps = false;
     public $incrementing = false;
     protected $connection = 'mysql_fivem';
+    protected $fillable = ['owner', 'plate', 'vehicle', 'type', 'stored', 'lasthouse', 'model', 'carseller', 'garage', 'fuel', 'engine', 'body', 'state', 'bodyDamage', 'job'];
 
     /*
     |--------------------------------------------------------------------------
