@@ -16,7 +16,7 @@
     $instagram_posts = DB::connection('mysql_fivem')->table('instagram_posts')->count();
 
     $info_body_text = 'Anzahl User: ' . $user_count;
-    $info_body_text .= '\n Anzahl Fahrzeuge: ' . $vehicle_count;
+    $info_body_text .= PHP_EOL . 'Anzahl Fahrzeuge: ' . $vehicle_count;
 
     $user_count_card_widget_definition = [
         'type'       => 'card',
