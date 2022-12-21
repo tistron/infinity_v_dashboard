@@ -17,7 +17,7 @@
 
     $user_count_card_widget_definition = [
         'type'    => 'div',
-        'class'   => 'row bg-dark text-white',
+        'class'   => 'row',
         'content' => [
             [ 'type' => 'card', 'content' => ['body' => $user_count ] ],
             [ 'type' => 'card', 'content' => ['body' => $vehicle_count] ],
