@@ -87,8 +87,7 @@ class UsersCrudController extends CrudController
 
     protected function setupUpdateOperation()
     {
-        if (backpack_user()->hasRole('Admin'))
-        {
+        if (backpack_user()->hasRole('Admin')) {
             $this->crud->addField([
                 'name' => 'group',
                 'label' => 'Gruppe',
@@ -106,293 +105,293 @@ class UsersCrudController extends CrudController
                     'max' => 'Zu viele Zeichen!',
                 ]
             ]);
-
-            $this->crud->addField([
-                'name' => 'firstname',
-                'label' => 'Vorname',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein!',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'lastname',
-                'label' => 'Nachname',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein!',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'inventory',
-                'label' => 'Inventar',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein!',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'accounts',
-                'label' => 'Accounting Dinge',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein!',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'job',
-                'label' => 'Job // Siehe Jobs Tabelle!',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein!',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'job_grade',
-                'label' => 'Jobgrade // Siehe Jobs Grades Tabelle!',
-                'type' => 'number',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein!',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'loadout',
-                'label' => 'Loadout',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'position',
-                'label' => 'Position',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'skin',
-                'label' => 'Skin',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'lore',
-                'label' => 'Lore',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'dateofbirth',
-                'label' => 'Geburtsdatum // Format: yyyy-mm-dd',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'height',
-                'label' => 'Größe',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'sex',
-                'label' => 'Geschlecht',
-                'type' => 'enum',
-                'options' => [
-                    'm' => 'Männlich',
-                    'w' => 'Weiblich',
-                ],
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'metadata',
-                'label' => 'Metadaten',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'status',
-                'label' => 'Spielerstatus',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'apps',
-                'label' => 'Apps',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'widget',
-                'label' => 'Widget',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'bt',
-                'label' => 'BT',
-                'type' => 'number',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'charinfo',
-                'label' => 'Charakterinfo',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'cryptocurrency',
-                'label' => 'Cryptowährung',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'cryptocurrencytransfers',
-                'label' => 'Cryptowährung Transfers',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'phone_number',
-                'label' => 'Telefonnummer',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'cd_identity',
-                'label' => 'CD Identität',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'einreise_status',
-                'label' => 'Einreise Status',
-                'type' => 'switch',
-                'onLabel' => true,
-                'offLabel' => false,
-            ]);
-
-            $this->crud->addField([
-                'name' => 'skills',
-                'label' => 'Skills',
-                'type' => 'text',
-                'validationRules' => 'required',
-                'validationMessages' => [
-                    'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
-                ]
-            ]);
-
-            $this->crud->addField([
-                'name' => 'phonePos',
-                'label' => 'Telefon Position',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'spotify',
-                'label' => 'Spotify',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'inside',
-                'label' => 'Inside',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'iban',
-                'label' => 'Iban',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'pincode',
-                'label' => 'Pincode',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'mainMailadres',
-                'label' => 'Haupt Mailadresse',
-                'type' => 'text',
-            ]);
-
-            $this->crud->addField([
-                'name' => 'first_screen_showed',
-                'label' => 'Ersten Screen gesehen',
-                'type' => 'switch',
-                'onLabel' => 1,
-                'offLabel' => 0,
-            ]);
-
-            $this->crud->addField([
-                'name' => 'disabled',
-                'label' => 'Deaktiviert',
-                'type' => 'switch',
-                'onLabel' => 1,
-                'offLabel' => 0,
-            ]);
-
-
-            $this->crud->setValidation();
         }
+
+        $this->crud->addField([
+            'name' => 'firstname',
+            'label' => 'Vorname',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'lastname',
+            'label' => 'Nachname',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'inventory',
+            'label' => 'Inventar',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'accounts',
+            'label' => 'Accounting Dinge',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'job',
+            'label' => 'Job // Siehe Jobs Tabelle!',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'job_grade',
+            'label' => 'Jobgrade // Siehe Jobs Grades Tabelle!',
+            'type' => 'number',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'loadout',
+            'label' => 'Loadout',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'position',
+            'label' => 'Position',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'skin',
+            'label' => 'Skin',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'lore',
+            'label' => 'Lore',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'dateofbirth',
+            'label' => 'Geburtsdatum // Format: yyyy-mm-dd',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann []',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'height',
+            'label' => 'Größe',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'sex',
+            'label' => 'Geschlecht',
+            'type' => 'enum',
+            'options' => [
+                'm' => 'Männlich',
+                'w' => 'Weiblich',
+            ],
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'metadata',
+            'label' => 'Metadaten',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'status',
+            'label' => 'Spielerstatus',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'apps',
+            'label' => 'Apps',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'widget',
+            'label' => 'Widget',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'bt',
+            'label' => 'BT',
+            'type' => 'number',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'charinfo',
+            'label' => 'Charakterinfo',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'cryptocurrency',
+            'label' => 'Cryptowährung',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'cryptocurrencytransfers',
+            'label' => 'Cryptowährung Transfers',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'phone_number',
+            'label' => 'Telefonnummer',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'cd_identity',
+            'label' => 'CD Identität',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'einreise_status',
+            'label' => 'Einreise Status',
+            'type' => 'switch',
+            'onLabel' => true,
+            'offLabel' => false,
+        ]);
+
+        $this->crud->addField([
+            'name' => 'skills',
+            'label' => 'Skills',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Falls leer dann UNKNOWN',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'phonePos',
+            'label' => 'Telefon Position',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'spotify',
+            'label' => 'Spotify',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'inside',
+            'label' => 'Inside',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'iban',
+            'label' => 'Iban',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'pincode',
+            'label' => 'Pincode',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'mainMailadres',
+            'label' => 'Haupt Mailadresse',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'first_screen_showed',
+            'label' => 'Ersten Screen gesehen',
+            'type' => 'switch',
+            'onLabel' => 1,
+            'offLabel' => 0,
+        ]);
+
+        $this->crud->addField([
+            'name' => 'disabled',
+            'label' => 'Deaktiviert',
+            'type' => 'switch',
+            'onLabel' => 1,
+            'offLabel' => 0,
+        ]);
+
+
+        $this->crud->setValidation();
     }
 }

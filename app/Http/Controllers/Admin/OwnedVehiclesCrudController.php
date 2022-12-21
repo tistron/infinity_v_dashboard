@@ -57,4 +57,155 @@ class OwnedVehiclesCrudController extends CrudController
         CRUD::column('bodyDamage')->type('string');
         CRUD::column('job')->type('string');
     }
+
+    protected function setupUpdateOperation()
+    {
+        $this->crud->addField([
+            'name' => 'owner',
+            'label' => 'Besitzer // Identifier von User Tabelle nutzen',
+            'type' => 'text',
+            'placeholder' => 'Identifier',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'plate',
+            'label' => 'Nummernschild',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'vehicle',
+            'label' => 'Fahrzeug',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'type',
+            'label' => 'Typ',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'stored',
+            'label' => 'In Garage?',
+            'type' => 'switch',
+            'onLabel' => 1,
+            'offLabel' => 0,
+        ]);
+
+        $this->crud->addField([
+            'name' => 'lasthouse',
+            'label' => 'Lasthouse',
+            'type' => 'number',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'model',
+            'label' => 'Modell',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'carseller',
+            'label' => 'Verkäufer',
+            'type' => 'number',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'garage',
+            'label' => 'Garage',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'fuel',
+            'label' => 'Treibstoff',
+            'type' => 'number',
+            'validationRules' => 'required|max:100',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+                'max' => 'Maximal 100'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'engine',
+            'label' => 'Motor',
+            'type' => 'number',
+            'validationRules' => 'required|max:1000',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+                'max' => 'Maximal 1000'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'body',
+            'label' => 'Karosserie',
+            'type' => 'number',
+            'validationRules' => 'required|max:1000',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+                'max' => 'Maximal 1000'
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'state',
+            'label' => 'Status',
+            'type' => 'switch',
+            'onLabel' => 1,
+            'offLabel' => 0,
+        ]);
+
+        $this->crud->addField([
+            'name' => 'bodyDamage',
+            'label' => 'Karosserie-Schaden',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein! Default []',
+            ]
+        ]);
+
+        $this->crud->addField([
+            'name' => 'job',
+            'label' => 'Job',
+            'type' => 'text',
+            'validationRules' => 'required',
+            'validationMessages' => [
+                'required' => 'Pflichtfeld, kann nicht leer sein!',
+            ]
+        ]);
+
+        $this->crud->setValidation();
+    }
 }
