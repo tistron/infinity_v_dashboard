@@ -3,7 +3,8 @@
 @php
     $widgets['before_content'][] = [
         'type'        => 'jumbotron',
-        'heading'     => 'Willkommen im Supportinterface von Infinity V!',
+        'heading'     => 'Willkommen!',
+        'content'     => 'Hier entsteht ein Interface um die Arbeit für Supporter an der DB zu erleichtern!',
     ];
 @endphp
 
