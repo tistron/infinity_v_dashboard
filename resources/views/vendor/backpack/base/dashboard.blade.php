@@ -29,7 +29,7 @@
 @endphp
 
 <style>
-    .card-body {
+    .card-header {
         background-color: #eceff3;
     }
 </style>
