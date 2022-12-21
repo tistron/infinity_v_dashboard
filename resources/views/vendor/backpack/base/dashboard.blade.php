@@ -15,15 +15,13 @@
     $vehicle_count = DB::connection('mysql_fivem')->table('owned_vehicles')->count();
     $instagram_posts = DB::connection('mysql_fivem')->table('instagram_posts')->count();
 
-    $info_body_text = 'Anzahl User: ' . $user_count;
-    $info_body_text .= "\r\n" . 'Anzahl Fahrzeuge: ' . $vehicle_count;
-
     $user_count_card_widget_definition = [
-        'type'       => 'card',
-        'class'      => 'card bg-dark text-white',
-        'content'    => [
-            'header' => 'Interessante Daten zum Server',
-            'body'   => $info_body_text,
+        'type'    => 'div',
+        'class'   => 'row',
+        'content' => [ // widgets
+            [ 'type' => 'card', 'content' => ['body' => $user_count ] ],
+            [ 'type' => 'card', 'content' => ['body' => $vehicle_count] ],
+            [ 'type' => 'card', 'content' => ['body' => $instagram_posts] ],
         ]
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
