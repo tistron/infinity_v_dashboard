@@ -45,8 +45,7 @@ class VehiclesParkingCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->removeButton('create');
-
-        CRUD::column('id')->type('text');
+        
         CRUD::column('model')->type('int');
         CRUD::column('status')->type('string');
         CRUD::column('tuning')->type('string');
