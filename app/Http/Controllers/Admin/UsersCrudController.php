@@ -90,7 +90,7 @@ class UsersCrudController extends CrudController
         if (backpack_user()->hasRole('Admin'))
         {
             $this->crud->addField([
-                'group' => 'group',
+                'name' => 'group',
                 'label' => 'Gruppe // ACHTUNG NUR superadmin, admin, mod oder user',
                 'type' => 'string',
                 'placeholder' => 'Gruppe',
