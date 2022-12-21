@@ -87,13 +87,19 @@ class UsersCrudController extends CrudController
 
     protected function setupUpdateOperation()
     {
-        $this->crud->setValidation(TagRequest::class);
-        $this->crud->addField(
-            [
-                'identifier' => 'identifier',
-                'type' => 'text',
-                'label' => 'Identifier'
-            ]
-        );
+        if (backpack_user()->hasRole('Admin'))
+        {
+            $this->crud->addField([
+                'group' => 'group',
+                'label' => 'Gruppe // ACHTUNG NUR superadmin, admin, mod oder user',
+                'type' => 'string',
+                'placeholder' => 'Gruppe',
+                'validationRules' => 'required|max:255|string',
+                'validationMessages' => [
+                    'required' => 'Pflichtfeld, kann nicht leer sein!',
+                    'max' => 'Zu viele Zeichen!',
+                ]
+            ]);
+        }
     }
 }
