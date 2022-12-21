@@ -16,6 +16,7 @@ class OwnedVehicles extends Model
     */
 
     protected $table = 'owned_vehicles';
+    protected $primaryKey = 'owner';
     public $timestamps = false;
     public $incrementing = false;
     protected $connection = 'mysql_fivem';
