@@ -33,6 +33,7 @@ class UsersCrudController extends CrudController
 
     public function get_count()
     {
+        DB::connection('mysql_fivem');
        return DB::table('users')->count();
     }
 
