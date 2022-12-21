@@ -17,7 +17,7 @@
 
     $user_count_card_widget_definition = [
         'type'    => 'div',
-        'class'   => 'row bg-info',
+        'class'   => 'row',
         'content' => [
             [ 'type' => 'card', 'content' => ['body' => $user_count ] ],
             [ 'type' => 'card', 'content' => ['body' => $vehicle_count] ],
@@ -27,6 +27,13 @@
     Widget::add($user_count_card_widget_definition)->to('after_content');
 
 @endphp
+
+<style>
+    .card-body {
+        background-color: #eceff3;
+    }
+</style>
+
 
 @section('content')
 @endsection
