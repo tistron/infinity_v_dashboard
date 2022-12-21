@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Users extends Model
 {
     use CrudTrait;
-    use Illuminate\Support\Facades\DB;
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +31,7 @@ class Users extends Model
 
     public function get_count()
     {
-        return DB::table('users')->count();
+        return \DB::table('users')->count();
     }
 
     /*
