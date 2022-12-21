@@ -29,6 +29,11 @@ class OwnedVehiclesCrudController extends CrudController
         CRUD::setModel(\App\Models\OwnedVehicles::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/owned-vehicles');
         CRUD::setEntityNameStrings('Fahrzeuge', 'Fahrzeuge');
+
+        if (!backpack_user()->hasRole('Admin') && !backpack_user()->hasRole('Supporter'))
+        {
+            $this->crud->denyAccess(['update', 'create', 'delete', 'list']);
+        }
     }
 
     /**
