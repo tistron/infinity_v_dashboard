@@ -14,6 +14,7 @@
     $user_count = DB::connection('mysql_fivem')->table('users')->count();
     $vehicle_count = DB::connection('mysql_fivem')->table('owned_vehicles')->count();
     $instagram_posts = DB::connection('mysql_fivem')->table('instagram_posts')->count();
+    $billing_count = DB::connection('mysql_fivem')->table('okokbilling')->count();
 
     $user_count_card_widget_definition = [
         'type'    => 'div',
@@ -22,6 +23,7 @@
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl User', 'body' => $user_count ] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl Fahrzeuge', 'body' => $vehicle_count] ],
             [ 'type' => 'card', 'content' => ['header' => 'Anzahl Instagram Storys', 'body' => $instagram_posts] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Anzahl Rechnungen', 'body' => $billing_count] ],
         ]
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
