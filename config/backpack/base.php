@@ -88,7 +88,7 @@ return [
     'project_logo'   => '<b>Infinity V</b> &nbsp; Support',
 
     // Show / hide breadcrumbs on admin panel pages.
-    'breadcrumbs' => true,
+    'breadcrumbs' => false,
 
     // Horizontal navbar classes. Helps make the admin panel look similar to your project's design.
     'header_class' => 'app-header bg-light border-0 navbar bg-dark',
