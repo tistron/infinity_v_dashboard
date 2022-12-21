@@ -19,9 +19,9 @@
         'type'    => 'div',
         'class'   => 'row',
         'content' => [
-            [ 'type' => 'card', 'content' => ['header' => $user_count, 'body' => '$user_count' ] ],
-            [ 'type' => 'card', 'content' => ['body' => 'Anzahl Fahrzeuge: ' . $vehicle_count] ],
-            [ 'type' => 'card', 'content' => ['body' => 'Anzahl Instagram Storys: ' . $instagram_posts] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Anzahl User', 'body' => $user_count ] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Anzahl Fahrzeuge', 'body' => $vehicle_count] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Anzahl Instagram Storys', 'body' => $instagram_posts] ],
         ]
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
