@@ -30,6 +30,7 @@
 
 <style>
     .card-header {
+        background: #eceff3;
         background-color: #eceff3;
     }
 </style>
