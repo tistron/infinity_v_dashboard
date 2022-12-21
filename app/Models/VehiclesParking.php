@@ -16,7 +16,6 @@ class VehiclesParking extends Model
     */
 
     protected $table = 'vehicle_parking';
-    protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
 
