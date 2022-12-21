@@ -9,7 +9,9 @@
         'content'     => 'Hier entsteht ein Interface für Infinity V RP, um die Arbeit für Supporter an der DB zu erleichtern!',
     ];
 
-    $user_count = DB::table('users')->count();
+
+    $users_model = new \App\Models\Users();
+    $user_count = $users_model->get_count();
     $user_count_card_widget_definition = [
         'type'       => 'card',
         'content'    => [
