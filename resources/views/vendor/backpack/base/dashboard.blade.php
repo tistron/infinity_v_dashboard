@@ -32,6 +32,17 @@
     ];
     Widget::add($vehicle_count_card_widget_definition)->to('after_content');
 
+    $instagram_posts = DB::connection('mysql_fivem')->table('instagram_posts')->count();
+    $instagram_post_count_card_widget_definition = [
+        'type'       => 'card',
+        'class'      => 'card bg-dark text-white',
+        'content'    => [
+            'header' => 'Anzahl der Instagram Posts',
+            'body'   => $instagram_posts,
+        ]
+    ];
+    Widget::add($instagram_post_count_card_widget_definition)->to('after_content');
+
 @endphp
 
 @section('content')
