@@ -10,8 +10,7 @@
     ];
 
 
-    $users_model = new \App\Models\Users();
-    $user_count = $users_model->get_count();
+    $user_count = DB::connection('mysql_fivem')->table('users')->count();
     $user_count_card_widget_definition = [
         'type'       => 'card',
         'content'    => [
