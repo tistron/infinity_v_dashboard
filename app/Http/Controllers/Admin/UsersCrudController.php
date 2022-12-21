@@ -325,8 +325,6 @@ class UsersCrudController extends CrudController
             'name' => 'einreise_status',
             'label' => 'Einreise Status',
             'type' => 'switch',
-            'onLabel' => true,
-            'offLabel' => false,
         ]);
 
         $this->crud->addField([
@@ -379,16 +377,12 @@ class UsersCrudController extends CrudController
             'name' => 'first_screen_showed',
             'label' => 'Ersten Screen gesehen',
             'type' => 'switch',
-            'onLabel' => 1,
-            'offLabel' => 0,
         ]);
 
         $this->crud->addField([
             'name' => 'disabled',
             'label' => 'Deaktiviert',
             'type' => 'switch',
-            'onLabel' => 1,
-            'offLabel' => 0,
         ]);
 
 

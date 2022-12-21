@@ -110,8 +110,6 @@ class OwnedVehiclesCrudController extends CrudController
             'name' => 'stored',
             'label' => 'In Garage?',
             'type' => 'switch',
-            'onLabel' => 1,
-            'offLabel' => 0,
         ]);
 
         $this->crud->addField([
@@ -187,8 +185,6 @@ class OwnedVehiclesCrudController extends CrudController
             'name' => 'state',
             'label' => 'Status',
             'type' => 'switch',
-            'onLabel' => 1,
-            'offLabel' => 0,
         ]);
 
         $this->crud->addField([
