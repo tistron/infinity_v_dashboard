@@ -3,7 +3,7 @@
 @php
     $widgets['before_content'][] = [
         'type'        => 'jumbotron',
-        'heading'     => trans('backpack::base.welcome'),
+        'heading'     => 'Willkommen im Supportinterface von Infinity V!',
     ];
 @endphp
 
