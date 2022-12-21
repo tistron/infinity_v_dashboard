@@ -20,7 +20,6 @@ class OwnedVehicles extends Model
     public $timestamps = false;
     public $incrementing = false;
     protected $connection = 'mysql_fivem';
-    protected $fillable = ['owner'];
 
     /*
     |--------------------------------------------------------------------------
