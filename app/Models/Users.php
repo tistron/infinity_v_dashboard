@@ -18,7 +18,9 @@ class Users extends Model
     protected $table = 'users';
     protected $primaryKey = 'identifier';
     protected $guarded = ['identifier'];
+
     public $incrementing = false;
+
     protected $connection = 'mysql_fivem';
 
     /*
