@@ -84,4 +84,16 @@ class UsersCrudController extends CrudController
         CRUD::column('first_screen_showed')->type('number');
         CRUD::column('disabled')->type('number');
     }
+
+    protected function setupUpdateOperation()
+    {
+        $this->crud->setValidation(TagRequest::class);
+        $this->crud->addField(
+            [
+                'identifier' => 'identifier',
+                'type' => 'text',
+                'label' => 'Identifier'
+            ]
+        );
+    }
 }
