@@ -18,3 +18,5 @@
         </ul>
     </li>
 @endif
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('owned-vehicles') }}"><i class="nav-icon la la-th-list"></i> Owned vehicles</a></li>
