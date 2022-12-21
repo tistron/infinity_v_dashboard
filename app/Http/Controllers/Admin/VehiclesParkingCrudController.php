@@ -46,7 +46,7 @@ class VehiclesParkingCrudController extends CrudController
     {
         $this->crud->removeButton('create');
 
-        CRUD::column('id')->type('varchar');
+        CRUD::column('id')->type('varchar(16)');
         CRUD::column('model')->type('int');
         CRUD::column('status')->type('string');
         CRUD::column('tuning')->type('string');
