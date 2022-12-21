@@ -91,7 +91,7 @@ class UsersCrudController extends CrudController
         {
             $this->crud->addField([
                 'name' => 'group',
-                'label' => 'Gruppe // ACHTUNG NUR superadmin, admin, mod oder user',
+                'label' => 'Gruppe',
                 'type' => 'enum',
                 'options' => [
                     'superadmin' => 'superadmin',
@@ -104,6 +104,16 @@ class UsersCrudController extends CrudController
                 'validationMessages' => [
                     'required' => 'Pflichtfeld, kann nicht leer sein!',
                     'max' => 'Zu viele Zeichen!',
+                ]
+            ]);
+
+            $this->crud->addField([
+                'name' => 'firstname',
+                'label' => 'Vorname',
+                'type' => 'text',
+                'validationRules' => 'required',
+                'validationMessages' => [
+                    'required' => 'Pflichtfeld, kann nicht leer sein!',
                 ]
             ]);
 
