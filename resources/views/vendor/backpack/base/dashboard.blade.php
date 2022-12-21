@@ -19,9 +19,9 @@
         'type'    => 'div',
         'class'   => 'row',
         'content' => [
-            [ 'type' => 'card', 'content' => ['body' => $user_count ] ],
-            [ 'type' => 'card', 'content' => ['body' => $vehicle_count] ],
-            [ 'type' => 'card', 'content' => ['body' => $instagram_posts] ],
+            [ 'type' => 'card', 'content' => ['body' => 'Anzahl User' . $user_count ] ],
+            [ 'type' => 'card', 'content' => ['body' => 'Anzahl Fahrzeuge' . $vehicle_count] ],
+            [ 'type' => 'card', 'content' => ['body' => 'Anzahl Instagram Storys' . $instagram_posts] ],
         ]
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
@@ -33,7 +33,6 @@
         background-color: #eceff3;
     }
 </style>
-
 
 @section('content')
 @endsection
