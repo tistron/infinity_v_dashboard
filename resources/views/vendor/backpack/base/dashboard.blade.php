@@ -21,7 +21,7 @@
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
 
-    $vehicle_count = DB::connection('mysql_fivem')->table('owned_ehicles')->count();
+    $vehicle_count = DB::connection('mysql_fivem')->table('owned_vehicles')->count();
     $vehicle_count_card_widget_definition = [
         'type'       => 'card',
         'class'      => 'card bg-dark text-white',
