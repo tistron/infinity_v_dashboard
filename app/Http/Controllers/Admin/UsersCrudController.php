@@ -100,6 +100,8 @@ class UsersCrudController extends CrudController
                     'max' => 'Zu viele Zeichen!',
                 ]
             ]);
+
+            $this->crud->setValidation();
         }
     }
 }
