@@ -20,3 +20,5 @@
         </ul>
     </li>
 @endif
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('vehicles-parking') }}"><i class="nav-icon la la-th-list"></i> Vehicles parkings</a></li>
