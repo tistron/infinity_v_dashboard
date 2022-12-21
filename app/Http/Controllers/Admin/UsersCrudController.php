@@ -21,7 +21,7 @@ class UsersCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
@@ -33,12 +33,14 @@ class UsersCrudController extends CrudController
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
+        $this->crud->removeButtons('create');
+
         CRUD::column('identifier')->type('string');
         CRUD::column('group')->type('string');
         CRUD::column('firstname')->type('string');
