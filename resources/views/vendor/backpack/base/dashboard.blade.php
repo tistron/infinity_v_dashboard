@@ -3,16 +3,14 @@
 @php
     use App\Http\Controllers\Admin\UsersCrudController;
 
-    $user_crud_controller = new UsersCrudController();
-    $user_count = $user_crud_controller->get_count();
-
     $widgets['before_content'][] = [
         'type'        => 'jumbotron',
         'heading'     => 'Willkommen!',
         'content'     => 'Hier entsteht ein Interface für Infinity V RP, um die Arbeit für Supporter an der DB zu erleichtern!',
     ];
 
-
+    DB::connection('mysql_fivem');
+    $user_count = DB::table('users')->count();
     $user_count_card_widget_definition = [
         'type'       => 'card',
         'content'    => [

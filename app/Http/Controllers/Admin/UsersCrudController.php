@@ -31,12 +31,6 @@ class UsersCrudController extends CrudController
         CRUD::setEntityNameStrings('users', 'users');
     }
 
-    public function get_count()
-    {
-        DB::connection('mysql_fivem');
-       return DB::table('users')->count();
-    }
-
     /**
      * Define what happens when the List operation is loaded.
      *
