@@ -8,7 +8,7 @@
    $has_user_role = backpack_user()->hasRole('Admin');
 @endphp
 
-@if($has_user_role)
+@if(!$has_user_role)
     <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-users"></i> Authentication</a>
         <ul class="nav-dropdown-items">
