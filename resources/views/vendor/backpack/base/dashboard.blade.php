@@ -14,7 +14,7 @@
         'type'       => 'card',
         'content'    => [
             'header' => 'Anzahl der Userdatensätze in der DB',
-            'body'   => (string) $user_count[0],
+            'body'   => $user_count,
         ]
     ];
 
