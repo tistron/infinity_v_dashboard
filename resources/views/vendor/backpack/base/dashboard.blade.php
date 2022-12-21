@@ -9,7 +9,7 @@
         'content'     => 'Hier entsteht ein Interface für Infinity V RP, um die Arbeit für Supporter an der DB zu erleichtern!',
     ];
 
-    $user_count = DB::connection('mysql_fivem')->select('SELECT COUNT(*) FROM users');
+    $user_count = DB::table('users')->count();
     $user_count_card_widget_definition = [
         'type'       => 'card',
         'content'    => [
