@@ -15,9 +15,9 @@ class VehiclesParking extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'vehicles_parkings';
-    // protected $primaryKey = 'id';
-    // public $timestamps = false;
+    protected $table = 'vehicles_parking';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
