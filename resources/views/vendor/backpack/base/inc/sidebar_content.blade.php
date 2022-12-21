@@ -5,6 +5,8 @@
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('owned-vehicles') }}"><i class="nav-icon la la-th-list"></i> Fahrzeuge</a></li>
 
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('vehicles-parking') }}"><i class="nav-icon la la-th-list"></i> Fahrzeug Parking</a></li>
+
 <!-- Users, Roles, Permissions -->
 @php
    $has_user_role = backpack_user()->hasRole('Admin');
@@ -20,5 +22,3 @@
         </ul>
     </li>
 @endif
-
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('vehicles-parking') }}"><i class="nav-icon la la-th-list"></i> Vehicles parkings</a></li>
