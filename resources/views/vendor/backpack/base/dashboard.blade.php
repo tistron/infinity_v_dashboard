@@ -19,7 +19,7 @@
         'type'    => 'div',
         'class'   => 'row',
         'content' => [
-            [ 'type' => 'card', 'content' => ['body' => 'Anzahl User: ' . $user_count ] ],
+            [ 'type' => 'card', 'content' => ['header' => $user_count, 'body' => '$user_count' ] ],
             [ 'type' => 'card', 'content' => ['body' => 'Anzahl Fahrzeuge: ' . $vehicle_count] ],
             [ 'type' => 'card', 'content' => ['body' => 'Anzahl Instagram Storys: ' . $instagram_posts] ],
         ]
