@@ -18,7 +18,6 @@ class UsersCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-    use Illuminate\Support\Facades\DB;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
