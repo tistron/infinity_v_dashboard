@@ -45,10 +45,39 @@ class OwnedVehiclesCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->removeButton('create');
+        
+        $this->crud->addColumn([
+            'name'        => 'owner',
+            'label'       => 'Owner',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('owner', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
 
-        CRUD::column('owner')->type('string');
-        CRUD::column('plate')->type('string');
-        CRUD::column('vehicle')->type('string');
+        $this->crud->addColumn([
+            'name'        => 'plate',
+            'label'       => 'Plate',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('plate', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+
+        $this->crud->addColumn([
+            'name'        => 'plate',
+            'label'       => 'Plate',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('plate', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+        
+        $this->crud->addColumn([
+            'name'        => 'vehicle',
+            'label'       => 'Vehicle',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('vehicle', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+        
         CRUD::column('type')->type('string');
         CRUD::column('stored')->type('int');
         CRUD::column('lasthouse')->type('int');

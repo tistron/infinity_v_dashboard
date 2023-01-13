@@ -47,10 +47,31 @@ class VehiclesParkingCrudController extends CrudController
         $this->crud->removeButton('create');
         $this->crud->removeButton('update');
         $this->crud->removeButton('show');
+        
+        $this->crud->addColumn([
+            'name'        => 'id',
+            'label'       => 'ID',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('id', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
 
-        CRUD::column('id');
-        CRUD::column('model')->type('int');
-        CRUD::column('status')->type('string');
+        $this->crud->addColumn([
+            'name'        => 'model',
+            'label'       => 'Model',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('model', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+
+        $this->crud->addColumn([
+            'name'        => 'status',
+            'label'       => 'Status',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('status', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+
         CRUD::column('tuning')->type('string');
         CRUD::column('stateBags')->type('int');
         CRUD::column('posX')->type('float');

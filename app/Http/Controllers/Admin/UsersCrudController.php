@@ -79,14 +79,7 @@ class UsersCrudController extends CrudController
             }
         ]);
 
-        $this->crud->addColumn([
-            'name'        => 'inventory',
-            'label'       => 'Inventar',
-            'searchLogic' => function ($query, $column, $searchTerm) {
-                $query->orWhere('inventory', 'like', '%'.$searchTerm.'%');
-            }
-        ]);
-
+        CRUD::column('inventory')->type('string');
         CRUD::column('accounts')->type('string');
         CRUD::column('job')->type('string');
         CRUD::column('job_grade')->type('number');
