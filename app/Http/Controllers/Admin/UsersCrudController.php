@@ -46,7 +46,15 @@ class UsersCrudController extends CrudController
     {
         $this->crud->removeButton('create');
 
-        CRUD::column('identifier')->type('string');
+
+        $this->crud->addColumn([
+            'name'        => 'identifier',
+            'label'       => 'Identifier',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('identifier', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+
         CRUD::column('group')->type('string');
         CRUD::column('firstname')->type('string');
         CRUD::column('lastname')->type('string');
