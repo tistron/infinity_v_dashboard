@@ -77,7 +77,7 @@ class UsersCrudController extends CrudController
             'searchLogic' => function ($query, $column, $searchTerm) {
                 $query->orWhere('lastname', 'like', '%'.$searchTerm.'%');
             }
-        ])
+        ]);
 
         CRUD::column('inventory')->type('string');
         CRUD::column('accounts')->type('string');
