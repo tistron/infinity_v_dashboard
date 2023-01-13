@@ -55,9 +55,30 @@ class UsersCrudController extends CrudController
             }
         ]);
 
-        CRUD::column('group')->type('string');
-        CRUD::column('firstname')->type('string');
-        CRUD::column('lastname')->type('string');
+        $this->crud->addColumn([
+            'name'        => 'group',
+            'label'       => 'Gruppe',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('group', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+
+        $this->crud->addColumn([
+            'name'        => 'firstname',
+            'label'       => 'Vorname',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('firstname', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+
+        $this->crud->addColumn([
+            'name'        => 'lastname',
+            'label'       => 'Nachname',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('lastname', 'like', '%'.$searchTerm.'%');
+            }
+        ])
+
         CRUD::column('inventory')->type('string');
         CRUD::column('accounts')->type('string');
         CRUD::column('job')->type('string');
