@@ -80,7 +80,14 @@ class VehiclesParkingCrudController extends CrudController
             }
         ]);
 
-        CRUD::column('tuning')->type('string');
+        $this->crud->addColumn([
+            'name'        => 'tuning',
+            'label'       => 'Tuning',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('tuning', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+        
         CRUD::column('stateBags')->type('int');
         CRUD::column('posX')->type('float');
         CRUD::column('posY')->type('float');

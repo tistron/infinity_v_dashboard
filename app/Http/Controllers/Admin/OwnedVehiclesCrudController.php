@@ -71,14 +71,6 @@ class OwnedVehiclesCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name'        => 'plate',
-            'label'       => 'Plate',
-            'searchLogic' => function ($query, $column, $searchTerm) {
-                $query->orWhere('plate', 'like', '%'.$searchTerm.'%');
-            }
-        ]);
-
-        $this->crud->addColumn([
             'name'        => 'vehicle',
             'label'       => 'Vehicle',
             'searchLogic' => function ($query, $column, $searchTerm) {
