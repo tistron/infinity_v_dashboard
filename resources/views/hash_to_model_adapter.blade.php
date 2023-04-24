@@ -16,13 +16,16 @@
 @endphp
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('calculate-btn').addEventListener('click', calculateModel);
+    });
+
     function calculateModel() {
         var hashCode = document.getElementById('hash_code').value;
         jenkinsOneAtATimeHashToString(hashCode).then(function(result) {
             document.getElementById('result').innerHTML = result;
         });
     }
-    document.getElementById('calculate-btn').addEventListener('click', calculateModel);
 
     function jenkinsOneAtATimeHashToString(hash) {
         var str = '';
