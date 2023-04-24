@@ -37,6 +37,7 @@
                 }
                 str += String.fromCharCode(byte);
             }
+            console.log(str)
             resolve(str);
         });
     }
