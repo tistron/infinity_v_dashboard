@@ -8,7 +8,7 @@
         'type'    => 'div',
         'class'   => 'row',
         'content' => [
-            [ 'type' => 'card', 'content' => ['header' => 'Anzahl User', 'body' => $html ] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Anzahl User', 'body' => $text_html . $button_html ] ],
         ]
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
