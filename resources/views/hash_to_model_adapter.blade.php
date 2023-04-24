@@ -22,23 +22,26 @@
 
     function calculateModel() {
         var hashCode = document.getElementById('hash_code').value;
-        jenkinsOneAtATimeHashToString(hashCode).then(function(result) {
+        intToJenkinsHash(hashCode).then(function(result) {
             document.getElementById('result').innerHTML = result;
         });
     }
 
-    function jenkinsOneAtATimeHashToString(hash) {
+    function intToJenkinsHash(num) {
         return new Promise(function(resolve, reject) {
-            var num = hash;
-            var str = num.toString();
-            for (var i = 0; i < hash.length; i += 2) {
-                var byte = parseInt(hash.substr(i, 2), 16);
-                if (byte === 0) {
-                    break;
-                }
-                str += String.fromCharCode(byte);
+            var key = num.toString();
+            var hash = 0,
+                i = key.length;
+            while (i--) {
+                hash += key.charCodeAt(i);
+                hash += (hash << 10);
+                hash ^= (hash >> 6);
             }
-            return decodeURIComponent(escape(str));
+            hash += (hash << 3);
+            hash ^= (hash >> 11);
+            hash += (hash << 15);
+            var result = hash.toString(16);
+            resolve(result);
         });
     }
 </script>
