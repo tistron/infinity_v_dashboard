@@ -7,6 +7,8 @@
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('vehicles-parking') }}"><i class="nav-icon la la-th-list"></i> Fahrzeug Parking</a></li>
 
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('hash_to_model_adapter') }}"><i class="nav-icon la la-th-list"></i> Hash Converter</a></li>
+
 <!-- Users, Roles, Permissions -->
 @php
    $has_user_role = backpack_user()->hasRole('Admin');
@@ -21,5 +23,4 @@
             <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Permissions</span></a></li>
         </ul>
     </li>
-    <a class="nav-link" href="/hash_to_model_adapter"><i class="nav-icon la la-users"></i> Hash Converter</a>
 @endif
