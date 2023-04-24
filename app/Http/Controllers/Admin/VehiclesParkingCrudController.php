@@ -30,7 +30,15 @@ class VehiclesParkingCrudController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/vehicles-parking');
         CRUD::setEntityNameStrings('Fahrzeug Parking', 'Fahrzeug Parking');
 
-        if (!backpack_user()->hasRole('Admin') && !backpack_user()->hasRole('Supporter'))
+        if (backpack_user()->hasRole('Admin'))
+        {
+
+        }
+        else if (backpack_user()->hasRole('Supporter'))
+        {
+            $this->crud->denyAccess(['update', 'create', 'delete']);
+        }
+        else
         {
             $this->crud->denyAccess(['update', 'create', 'delete', 'list']);
         }
@@ -47,7 +55,7 @@ class VehiclesParkingCrudController extends CrudController
         $this->crud->removeButton('create');
         $this->crud->removeButton('update');
         $this->crud->removeButton('show');
-        
+
         $this->crud->addColumn([
             'name'        => 'id',
             'label'       => 'ID',
@@ -72,7 +80,14 @@ class VehiclesParkingCrudController extends CrudController
             }
         ]);
 
-        CRUD::column('tuning')->type('string');
+        $this->crud->addColumn([
+            'name'        => 'tuning',
+            'label'       => 'Tuning',
+            'searchLogic' => function ($query, $column, $searchTerm) {
+                $query->orWhere('tuning', 'like', '%'.$searchTerm.'%');
+            }
+        ]);
+        
         CRUD::column('stateBags')->type('int');
         CRUD::column('posX')->type('float');
         CRUD::column('posY')->type('float');

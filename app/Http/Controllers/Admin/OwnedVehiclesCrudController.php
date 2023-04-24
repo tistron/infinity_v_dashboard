@@ -30,7 +30,15 @@ class OwnedVehiclesCrudController extends CrudController
         CRUD::setRoute(config('backpack.base.route_prefix') . '/owned-vehicles');
         CRUD::setEntityNameStrings('Fahrzeuge', 'Fahrzeuge');
 
-        if (!backpack_user()->hasRole('Admin') && !backpack_user()->hasRole('Supporter'))
+        if (backpack_user()->hasRole('Admin'))
+        {
+
+        }
+        else if (backpack_user()->hasRole('Supporter'))
+        {
+            $this->crud->denyAccess(['update', 'create', 'delete']);
+        }
+        else
         {
             $this->crud->denyAccess(['update', 'create', 'delete', 'list']);
         }
@@ -45,7 +53,7 @@ class OwnedVehiclesCrudController extends CrudController
     protected function setupListOperation()
     {
         $this->crud->removeButton('create');
-        
+
         $this->crud->addColumn([
             'name'        => 'owner',
             'label'       => 'Owner',
@@ -63,21 +71,13 @@ class OwnedVehiclesCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name'        => 'plate',
-            'label'       => 'Plate',
-            'searchLogic' => function ($query, $column, $searchTerm) {
-                $query->orWhere('plate', 'like', '%'.$searchTerm.'%');
-            }
-        ]);
-        
-        $this->crud->addColumn([
             'name'        => 'vehicle',
             'label'       => 'Vehicle',
             'searchLogic' => function ($query, $column, $searchTerm) {
                 $query->orWhere('vehicle', 'like', '%'.$searchTerm.'%');
             }
         ]);
-        
+
         CRUD::column('type')->type('string');
         CRUD::column('stored')->type('int');
         CRUD::column('lasthouse')->type('int');
