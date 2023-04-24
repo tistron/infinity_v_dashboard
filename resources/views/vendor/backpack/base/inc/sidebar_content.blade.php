@@ -21,4 +21,5 @@
             <li class="nav-item"><a class="nav-link" href="{{ backpack_url('permission') }}"><i class="nav-icon la la-key"></i> <span>Permissions</span></a></li>
         </ul>
     </li>
+    <a class="nav-link" href="/hash_to_model_adapter"><i class="nav-icon la la-users"></i> Hash Converter</a>
 @endif
