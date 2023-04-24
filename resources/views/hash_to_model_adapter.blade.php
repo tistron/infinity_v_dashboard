@@ -9,7 +9,7 @@
         'type'    => 'div',
         'class'   => 'row',
         'content' => [
-            [ 'type' => 'card', 'content' => ['header' => 'Hash To Model Converter', 'body' => $text_html . $button_html . $erg_html ] ],
+            [ 'type' => 'card', 'content' => ['header' => 'Hash To Model Converter (NOCH NICHT FUNKTIONAL)', 'body' => $text_html . $button_html . $erg_html ] ],
         ]
     ];
     Widget::add($user_count_card_widget_definition)->to('after_content');
