@@ -35,14 +35,17 @@
         document.getElementById('result').innerHTML = str;
     }
 
-    async function intToJenkinsHash(intValue) {
-        let hash = intValue >>> 0;
-        let result = "";
-        while (hash > 0) {
-            const charCode = hash & 0xff;
-            result += String.fromCharCode(charCode);
-            hash = (hash - charCode) / 256;
+    async function intToJenkinsHash(num) {
+        let hash = BigInt(num < 0 ? num + 0x100000000 : num).toString(16);
+        while (hash.length < 8) {
+            hash = "0" + hash;
         }
+        const bytes = [];
+        for (let i = 0; i < hash.length; i += 2) {
+            const byte = parseInt(hash.substr(i, 2), 16);
+            bytes.push(byte);
+        }
+        const result = await jenkinsOneAtATimeHashToString(bytes);
         return result;
     }
 
