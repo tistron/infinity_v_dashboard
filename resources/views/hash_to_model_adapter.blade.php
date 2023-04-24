@@ -28,15 +28,17 @@
     }
 
     function jenkinsOneAtATimeHashToString(hash) {
-        var str = '';
-        for (var i = 0; i < hash.length; i += 2) {
-            var byte = parseInt(hash.substr(i, 2), 16);
-            if (byte === 0) {
-                break;
+        return new Promise(function(resolve, reject) {
+            var str = '';
+            for (var i = 0; i < hash.length; i += 2) {
+                var byte = parseInt(hash.substr(i, 2), 16);
+                if (byte === 0) {
+                    break;
+                }
+                str += String.fromCharCode(byte);
             }
-            str += String.fromCharCode(byte);
-        }
-        return str;
+            resolve(str);
+        });
     }
 </script>
 
