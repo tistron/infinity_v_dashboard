@@ -20,35 +20,46 @@
         document.getElementById('calculate-btn').addEventListener('click', calculateModel);
     });
 
-    function calculateModel() {
-        var hashCode = document.getElementById('hash_code').value;
-        intToJenkinsHash(hashCode).then(function(result) {
-            document.getElementById('result').innerHTML = result;
-        });
+    async function calculateModel() {
+        var input = document.getElementById('hash_code').value;
+        var num = parseInt(input);
+
+        if (isNaN(num)) {
+            document.getElementById('result').innerHTML = 'Invalid input';
+            return;
+        }
+
+        var hash = await intToJenkinsHash(Math.abs(num));
+        var str = hashToModelName(hash);
+
+        document.getElementById('result').innerHTML = str;
     }
 
     async function intToJenkinsHash(num) {
+        return new Promise(resolve => {
+            var hash = 0, i = num.toString().length;
+            while (i--) {
+                hash += num.toString().charCodeAt(i);
+                hash += (hash << 10);
+                hash ^= (hash >> 6);
+            }
+            hash += (hash << 3);
+            hash ^= (hash >> 11);
+            hash += (hash << 15);
+            resolve(hash.toString(16));
+        });
+    }
+
+    function hashToModelName(hash) {
         var str = '';
-        var hex = num.toString(16);
-        for (var i = 0; i < hex.length; i += 2) {
-            var byte = parseInt(hex.substr(i, 2), 16);
+        for (var i = 0; i < hash.length; i += 2) {
+            var byte = parseInt(hash.substr(i, 2), 16);
             if (byte === 0) {
                 break;
             }
             str += String.fromCharCode(byte);
         }
-
-        var hash = 0;
-        for (var i = 0; i < str.length; i++) {
-            hash += str.charCodeAt(i);
-            hash += (hash << 10);
-            hash ^= (hash >> 6);
-        }
-        hash += (hash << 3);
-        hash ^= (hash >> 11);
-        hash += (hash << 15);
-
-        return hash.toString(36);
+        return str;
     }
 </script>
 
