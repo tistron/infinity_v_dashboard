@@ -29,7 +29,8 @@
 
     function jenkinsOneAtATimeHashToString(hash) {
         return new Promise(function(resolve, reject) {
-            var str = '';
+            var num = hash;
+            var str = num.toString();
             for (var i = 0; i < hash.length; i += 2) {
                 var byte = parseInt(hash.substr(i, 2), 16);
                 if (byte === 0) {
