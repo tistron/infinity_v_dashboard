@@ -35,19 +35,15 @@
         document.getElementById('result').innerHTML = str;
     }
 
-    async function intToJenkinsHash(num) {
-        return new Promise(resolve => {
-            var hash = 0, i = num.toString().length;
-            while (i--) {
-                hash += num.toString().charCodeAt(i);
-                hash += (hash << 10);
-                hash ^= (hash >> 6);
-            }
-            hash += (hash << 3);
-            hash ^= (hash >> 11);
-            hash += (hash << 15);
-            resolve(hash.toString(16));
-        });
+    async function intToJenkinsHash(intValue) {
+        let hash = intValue >>> 0;
+        let result = "";
+        while (hash > 0) {
+            const charCode = hash & 0xff;
+            result += String.fromCharCode(charCode);
+            hash = (hash - charCode) / 256;
+        }
+        return result;
     }
 
     function hashToModelName(hash) {
