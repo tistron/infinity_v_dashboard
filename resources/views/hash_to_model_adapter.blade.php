@@ -37,8 +37,7 @@
                 }
                 str += String.fromCharCode(byte);
             }
-            console.log(str)
-            resolve(str);
+            return decodeURIComponent(escape(str));
         });
     }
 </script>
