@@ -27,22 +27,28 @@
         });
     }
 
-    function intToJenkinsHash(num) {
-        return new Promise(function(resolve, reject) {
-            var key = num.toString();
-            var hash = 0,
-                i = key.length;
-            while (i--) {
-                hash += key.charCodeAt(i);
-                hash += (hash << 10);
-                hash ^= (hash >> 6);
+    async function intToJenkinsHash(num) {
+        var str = '';
+        var hex = num.toString(16);
+        for (var i = 0; i < hex.length; i += 2) {
+            var byte = parseInt(hex.substr(i, 2), 16);
+            if (byte === 0) {
+                break;
             }
-            hash += (hash << 3);
-            hash ^= (hash >> 11);
-            hash += (hash << 15);
-            var result = hash.toString(16);
-            resolve(result);
-        });
+            str += String.fromCharCode(byte);
+        }
+
+        var hash = 0;
+        for (var i = 0; i < str.length; i++) {
+            hash += str.charCodeAt(i);
+            hash += (hash << 10);
+            hash ^= (hash >> 6);
+        }
+        hash += (hash << 3);
+        hash ^= (hash >> 11);
+        hash += (hash << 15);
+
+        return hash.toString(36);
     }
 </script>
 
