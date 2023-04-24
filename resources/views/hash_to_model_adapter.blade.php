@@ -1,10 +1,8 @@
 @extends(backpack_view('blank'))
 
 @php
-    echo 'Hashwert';
-    echo Form::open(array('url'=>'/support/hash_to_model_adapter'));
-    echo Form::text('hash');
-    echo Form::close();
+    {{ Form::input('text', 'name'); }}
+    {{ Form::input('email', 'email_address', null, ['class' => 'emailfld']); }}
 @endphp
 
 <style>
