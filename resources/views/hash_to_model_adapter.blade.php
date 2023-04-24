@@ -1,7 +1,7 @@
 @extends(backpack_view('blank'))
 
 @php
-    $html = '<button type="button" class="btn btn-primary">Click me!</button>';
+    $html = '<input type="text" name="hash_code" placeholder="Hash Code">';
 
     $user_count_card_widget_definition = [
         'type'    => 'div',
